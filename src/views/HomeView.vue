@@ -1,9 +1,22 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import NewTodo from '@/components/Todo/NewTodo.vue'
+import TodoList from '@/components/Todo/TodoList.vue'
+import type { todo } from '@/types'
+import { computed } from 'vue'
+
+const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+const allTodos = await res.json()
+
+const todos = computed<todo[]>(() => {
+  return allTodos.filter((todo: todo) => todo.userId === 1)
+})
+
+console.log('toodddooooo', todos)
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <NewTodo />
+    <TodoList :todos="todos" />
+  </div>
 </template>
