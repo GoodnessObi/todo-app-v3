@@ -5,10 +5,11 @@ import WelcomeMessage from './components/WelcomeMessage.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <h1>Todo</h1>
     <div class="wrapper">
-      <WelcomeMessage msg="What's to do?" />
+      <WelcomeMessage
+        msg="I made a huge to do list for today, I just can't figure out who is going to do it"
+      />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -24,21 +25,33 @@ import WelcomeMessage from './components/WelcomeMessage.vue'
 </template>
 
 <style scoped>
+header h1 {
+  color: #db6b97;
+  font-weight: 800;
+  font-size: 3rem;
+}
 header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   line-height: 1.5;
   max-height: 100vh;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+header .wrapper {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -61,24 +74,13 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
-    place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    margin-top: 0;
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
+    /* text-align: left; */
+    /* margin-left: -1rem; */
     font-size: 1rem;
 
     padding: 1rem 0;

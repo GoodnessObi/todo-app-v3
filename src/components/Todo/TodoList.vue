@@ -8,7 +8,13 @@ defineProps<{
 </script>
 
 <template>
-  <div v-for="todo in todos" :key="todo.id">
-    <TodoItem :todo="todo" />
+  <div class="todoList">
+    <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
   </div>
 </template>
+
+<style scoped>
+.todoList {
+  padding: 1rem 0;
+}
+</style>

@@ -13,8 +13,22 @@ const todos = computed<todo[]>(() => {
 </script>
 
 <template>
-  <div>
+  <div class="list">
     <NewTodo />
     <TodoList :todos="todos" />
   </div>
 </template>
+
+<style scoped>
+.list {
+  background-color: #f3deba;
+  border-radius: 3rem;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 1024px) {
+  .list {
+    padding: 2rem;
+  }
+}
+</style>
