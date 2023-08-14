@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { todo as todoItem } from '@/types'
-import Button from '../Button.vue'
+import Button from '../UIcomponents/Button.vue'
 
 defineProps<{ todo: todoItem }>()
 </script>

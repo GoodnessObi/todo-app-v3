@@ -10,8 +10,6 @@ const allTodos = await res.json()
 const todos = computed<todo[]>(() => {
   return allTodos.filter((todo: todo) => todo.userId === 1)
 })
-
-console.log('toodddooooo', todos)
 </script>
 
 <template>
