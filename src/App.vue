@@ -1,6 +1,11 @@
-<script setup lang="ts">
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 import WelcomeMessage from './components/WelcomeMessage.vue'
+export default {
+  components: {
+    WelcomeMessage
+  }
+}
 </script>
 
 <template>

@@ -1,15 +1,36 @@
-<script setup lang="ts">
+<script>
 import NewTodo from '@/components/Todo/NewTodo.vue'
 import TodoList from '@/components/Todo/TodoList.vue'
-import type { todo } from '@/types'
-import { computed } from 'vue'
 
-const res = await fetch('https://jsonplaceholder.typicode.com/todos')
-const allTodos = await res.json()
+export default {
+  components: {
+    NewTodo,
+    TodoList
+  },
+  data: () => ({
+    allTodos: []
+  }),
+  computed: {
+    todos: () => {
+      console.log('tdoooo', this.allTodos)
+      return this.allTodos.length > 0 && this.allTodos.filter((todo) => todo.userId === 1)
+    }
+  },
+  methods: {
+    async fetchTodos() {
+      this.allTodos = await fetch('https://jsonplaceholder.typicode.com/todos').then((response) =>
+        response.json()
+      )
+    }
+  },
+  watch: {},
+  created() {
+    this.fetchTodos()
+  }
+}
 
-const todos = computed<todo[]>(() => {
-  return allTodos.filter((todo: todo) => todo.userId === 1)
-})
+// const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+// const allTodos = await res.json()
 </script>
 
 <template>
