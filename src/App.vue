@@ -1,6 +1,7 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+// import { RouterLink, RouterView } from 'vue-router'
 import WelcomeMessage from './components/WelcomeMessage.vue'
+
 export default {
   components: {
     WelcomeMessage
@@ -17,13 +18,14 @@ export default {
       />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
       </nav>
     </div>
   </header>
   <Suspense>
-    <RouterView />
+    <!-- <RouterView /> -->
+    <router-view></router-view>
 
     <template #fallback> Loading... </template>
   </Suspense>

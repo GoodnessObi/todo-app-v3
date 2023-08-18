@@ -1,10 +1,14 @@
-<script setup lang="ts">
-import type { todo } from '@/types'
+<script>
 import TodoItem from './TodoItem.vue'
 
-defineProps<{
-  todos: todo[]
-}>()
+export default {
+  components: {
+    TodoItem
+  },
+  props: {
+    todos: Array
+  }
+}
 </script>
 
 <template>

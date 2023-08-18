@@ -1,21 +1,28 @@
-<script setup lang="ts">
-import type { todo as todoItem } from '@/types'
-import Button from '../UIcomponents/Button.vue'
-import Checkbox from '../UIcomponents/Checkbox.vue'
+<script>
+import CustomBtn from '../UIcomponents/CustomBtn.vue'
+import CheckBox from '../UIcomponents/CheckBox.vue'
 
-defineProps<{ todo: todoItem }>()
+export default {
+  components: {
+    CustomBtn,
+    CheckBox
+  },
+  props: {
+    todo: Object
+  }
+}
 </script>
 
 <template>
   <div :class="$style.listItem">
     <div>
-      <Checkbox />
+      <CheckBox />
       <span>
         {{ todo.title }}
       </span>
     </div>
 
-    <Button type="small">
+    <CustomBtn type="small">
       <template #text
         ><svg
           viewBox="0 0 24 24"
@@ -47,7 +54,7 @@ defineProps<{ todo: todoItem }>()
           </g>
         </svg>
       </template>
-    </Button>
+    </CustomBtn>
   </div>
 </template>
 

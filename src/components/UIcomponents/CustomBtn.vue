@@ -1,8 +1,9 @@
-<script setup lang="ts">
-type btnProp = {
-  type: 'primary' | 'small'
+<script>
+export default {
+  props: {
+    type: String
+  }
 }
-defineProps<btnProp>()
 </script>
 
 <template>

@@ -8,22 +8,32 @@ export default {
     TodoList
   },
   data: () => ({
-    allTodos: []
+    allTodos: [],
+    todos: []
   }),
   computed: {
-    todos: () => {
-      console.log('tdoooo', this.allTodos)
-      return this.allTodos.length > 0 && this.allTodos.filter((todo) => todo.userId === 1)
-    }
+    // filteredTodos: () => {
+    //   console.log('tiggereddddd')
+    //   return this.allTodos?.filter((todo) => todo.userId === 1)
+    // },
+    // todos: () => {
+    //   return this.filteredTodos
+    // }
   },
   methods: {
     async fetchTodos() {
+      console.log('I rannn')
       this.allTodos = await fetch('https://jsonplaceholder.typicode.com/todos').then((response) =>
         response.json()
       )
+      console.log(this.allTodos, 'alltodo')
     }
   },
-  watch: {},
+  watch: {
+    allTodos(newValue) {
+      this.todos = newValue.length > 0 && this.allTodos.filter((todo) => todo.userId === 1)
+    }
+  },
   created() {
     this.fetchTodos()
   }

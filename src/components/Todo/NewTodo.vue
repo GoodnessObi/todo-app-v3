@@ -1,14 +1,21 @@
-<script setup lang="ts">
-import Button from '../UIcomponents/Button.vue'
+<script>
+import CustomBtn from '../UIcomponents/CustomBtn.vue'
 import InputField from '../UIcomponents/InputField.vue'
+
+export default {
+  components: {
+    CustomBtn,
+    InputField
+  }
+}
 </script>
 
 <template>
   <div :class="$style.todoForm">
     <InputField type="text" id="newTodo" />
-    <Button type="primary">
+    <CustomBtn type="primary">
       <template #text>Add</template>
-    </Button>
+    </CustomBtn>
   </div>
 </template>
 

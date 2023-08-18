@@ -1,12 +1,14 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script>
+export default {
+  props: {
+    msg: String
+  }
+}
 </script>
 
 <template>
   <div class="greetings">
-    <quote>"{{ msg }}"</quote>
+    <p>"{{ msg }}"</p>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ defineProps<{
   text-align: center;
 }
 
-.greetings quote {
+.greetings p {
   color: #21bf73;
 }
 

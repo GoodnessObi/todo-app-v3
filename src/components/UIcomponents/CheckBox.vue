@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<script></script>
 <template>
   <input type="checkbox" name="" id="" />
 </template>

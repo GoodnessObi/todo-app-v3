@@ -1,8 +1,10 @@
-<script setup lang="ts">
-defineProps<{
-  type: string
-  id: string
-}>()
+<script>
+export default {
+  props: {
+    type: String,
+    id: String
+  }
+}
 </script>
 
 <template>
